@@ -9,62 +9,68 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/textView_number_to_call"
         android:layout_alignParentTop="true"
-        android:text="Search for contact" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:hint="Name"
-        android:id="@+id/editTextContactName"
-        android:layout_below="@+id/textViewContact"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
-        android:id="@+id/buttonSearch"
-        android:layout_alignTop="@+id/editTextContactName"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter number"
-        android:id="@+id/textViewNumber"
-        android:layout_below="@+id/buttonSearch"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="56dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/editTextNumber"
-        android:hint="Phone number"
-        android:layout_below="@+id/textViewNumber"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Call"
+        android:text="@string/call"
         android:id="@+id/buttonCall"
-        android:layout_below="@+id/textViewNumber"
         android:onClick="makeCall"
-        android:layout_alignRight="@+id/buttonSearch"
-        android:layout_alignEnd="@+id/buttonSearch" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_table_header"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@id/buttonCall">
+
+        <TextView
+            android:id="@+id/textView_date_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/date" />
+
+        <TextView
+            android:id="@+id/textView_type_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/type" />
+
+
+        <TextView
+            android:id="@+id/textView_number_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/textView_type_header"
+            android:layout_toStartOf="@id/textView_type_header"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:text="@string/number" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_table_header"
+        android:id="@android:id/list"
+        >
+
+    </ListView>
+
 </RelativeLayout>
